@@ -1,61 +1,334 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Workout Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive workout session management platform for gyms built with Laravel, Filament Admin Panel, and Livewire. This application provides a complete solution for managing workout sessions with role-based access control, API endpoints, and modern web interface.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Core Features
+- User Authentication: Register, login, logout with Laravel Sanctum
+- Workout Management: Full CRUD operations for workout sessions
+- Role-Based Access Control: Admin and regular user roles
+- Soft Deletes: Safe deletion with restore capability
+- Search & Filter: Real-time search by title and trainer
+- Responsive Design: Mobile-friendly Tailwind CSS interface
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Admin Panel (Filament)
+- User Management: Complete CRUD for users with role assignment
+- Workout Management: Admin oversight of all workouts
+- Advanced Filtering: Filter by user, status, and soft-deleted items
+- Bulk Operations: Mass actions for efficient management
+- Restore Functionality: Recover soft-deleted workouts
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### API Features
+- RESTful API: Complete workout management API
+- Token Authentication: Secure API access with Sanctum
+- Interactive Documentation: Swagger/OpenAPI documentation
+- Request Validation: Comprehensive form request validation
+- API Resources: Consistent JSON responses
 
-## Learning Laravel
+### Frontend (Livewire)
+- Real-time Interface: Dynamic updates without page refresh
+- Modal Forms: Smooth create/edit experience
+- Validation Feedback: Real-time form validation
+- Statistics Dashboard: Workout stats and overview
+- Search & Filter: Live search functionality
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠 Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Backend: Laravel 12.x
+- Admin Panel: Filament 3.x
+- Frontend: Livewire 3.x with Tailwind CSS
+- Authentication: Laravel Sanctum
+- API Documentation: L5-Swagger (OpenAPI 3.0)
+- Database: MySQL 8.0
+- Styling: Tailwind CSS
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Requirements
 
-## Laravel Sponsors
+### 
+- PHP 8.2+
+- Composer
+- MySQL 8.0+
+- Node.js & NPM
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Installation
 
-### Premium Partners
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/workout-manager.git
+cd workout-manager
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. Install dependencies
+```bash
+composer install
+npm install
+```
 
-## Contributing
+3. Configure environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Update .env file with your database credentials
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=workout_manager
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-## Code of Conduct
+L5_SWAGGER_GENERATE_ALWAYS=true
+L5_SWAGGER_CONST_HOST=http://localhost:8000
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Run migrations and seeders
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-## Security Vulnerabilities
+6. Generate API documentation
+```bash
+php artisan l5-swagger:generate 
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. Compile assets
+```bash
+npm run build 
+```
 
-## License
+8. Start the development server
+```
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 👥 Default Users
+
+### Admin User
+
+- Email: [admin@example.com](mailto:admin@example.com)
+- Password: password
+- Role: admin
+- Access: Full admin panel access + all user features
+
+
+### Regular User
+
+- Email: [user@example.com](mailto:user@example.com)
+- Password: password
+- Role: user
+- Access: Frontend dashboard and API access only
+
+## 📚 API Documentation
+
+### Access Points
+
+- Interactive Documentation: [http://localhost:8000/api/documentation](http://localhost:8000/api/documentation)
+- JSON Schema: [http://localhost:8000/docs/api-docs.json](http://localhost:8000/docs/api-docs.json)
+
+
+### Authentication Endpoints
+
+#### Register User
+
+```plaintext
+POST /api/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123",
+  "password_confirmation": "password123"
+}
+```
+
+#### Login
+
+```plaintext
+POST /api/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+#### Logout
+
+```plaintext
+POST /api/logout
+Authorization: Bearer YOUR_TOKEN_HERE
+```
+
+### Workout Endpoints
+
+#### Get All Workouts
+
+```plaintext
+GET /api/workouts
+Authorization: Bearer YOUR_TOKEN_HERE
+```
+
+#### Create Workout
+
+```plaintext
+POST /api/workouts
+Authorization: Bearer YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "title": "Power Training",
+  "description": "Intensive leg day workout",
+  "trainer": "John Doe",
+  "date": "2025-06-07T18:00:00",
+  "slots": 10,
+  "is_active": true
+}
+```
+
+#### Get Specific Workout
+
+```plaintext
+GET /api/workouts/{id}
+Authorization: Bearer YOUR_TOKEN_HERE
+```
+
+#### Update Workout
+
+```plaintext
+PUT /api/workouts/{id}
+Authorization: Bearer YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "title": "Updated Power Training",
+  "slots": 15
+}
+```
+
+#### Delete Workout
+
+```plaintext
+DELETE /api/workouts/{id}
+Authorization: Bearer YOUR_TOKEN_HERE
+```
+
+## 🗂 Database Schema
+
+### Users Table
+
+| Field | Type | Description
+|-----|-----|-----
+| id | int | Primary key
+| name | string | User's full name
+| email | string | Unique email address
+| role | enum | 'admin' or 'user'
+| email_verified_at | timestamp | Email verification time
+| password | string | Hashed password
+| created_at | timestamp | Creation time
+| updated_at | timestamp | Last update time
+
+
+### Workouts Table
+
+| Field | Type | Description
+|-----|-----|-----
+| id | int | Primary key
+| title | string | Workout title
+| description | text | Workout description
+| trainer | string | Trainer's name
+| date | datetime | Workout date and time
+| slots | int | Available slots
+| is_active | boolean | Public visibility
+| user_id | int | Creator (foreign key)
+| deleted_at | timestamp | Soft delete timestamp
+| created_at | timestamp | Creation time
+| updated_at | timestamp | Last update time
+
+## 🧪 Testing
+
+### API Testing with cURL
+
+```shellscript
+# Register a new user
+curl -X POST http://localhost:8000/api/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test User","email":"test@example.com","password":"password123","password_confirmation":"password123"}'
+
+# Login and get token
+curl -X POST http://localhost:8000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password123"}'
+
+# Create a workout (replace YOUR_TOKEN with actual token)
+curl -X POST http://localhost:8000/api/workouts \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -d '{"title":"Morning Yoga","description":"Relaxing yoga session","trainer":"Jane Doe","date":"2025-06-07T08:00:00","slots":20,"is_active":true}'
+```
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the API documentation ([http://localhost:8000/api/documentation](http://localhost:8000/api/documentation))
+2. Ensure all environment variables are properly set
+3. Verify database connectivity
+
+
+For additional support, please open an issue in the repository.
+
+## 🏗 Project Structure
+
+```plaintext
+workout-manager/
+├── app/
+│   ├── Filament/Resources/          # Filament admin resources
+│   │   ├── UserResource.php
+│   │   └── WorkoutResource.php
+│   ├── Http/
+│   │   ├── Controllers/Api/         # API controllers
+│   │   │   ├── AuthController.php
+│   │   │   └── WorkoutController.php
+│   │   ├── Requests/               # Form request validation
+│   │   │   ├── StoreWorkoutRequest.php
+│   │   │   └── UpdateWorkoutRequest.php
+│   │   ├── Resources/              # API resources
+│   │   │   └── WorkoutResource.php
+│   │   └── Middleware/
+│   │       └── AdminMiddleware.php
+│   ├── Livewire/                   # Livewire components
+│   │   ├── Auth/
+│   │   │   ├── Login.php
+│   │   │   └── Register.php
+│   │   └── Dashboard.php
+│   ├── Models/                     # Eloquent models
+│   │   ├── User.php
+│   │   └── Workout.php
+│   └── Policies/
+│       └── WorkoutPolicy.php
+├── database/
+│   ├── migrations/                 # Database migrations
+│   └── seeders/                   # Database seeders
+│       └── AdminUserSeeder.php
+├── resources/views/livewire/       # Livewire views
+│   ├── auth/
+│   │   ├── login.blade.php
+│   │   └── register.blade.php
+│   └── dashboard.blade.php
+├── routes/
+│   ├── api.php                    # API routes
+│   └── web.php                    # Web routes
+├── docker/                        # Docker configuration
+│   ├── nginx/
+│   ├── php/
+│   └── mysql/
+├── docker-compose.yml             # Docker Compose configuration
+├── Dockerfile                     # Docker image definition
+└── README.md                      # This file
+```
