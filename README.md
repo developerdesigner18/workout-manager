@@ -324,11 +324,5 @@ workout-manager/
 ├── routes/
 │   ├── api.php                    # API routes
 │   └── web.php                    # Web routes
-├── docker/                        # Docker configuration
-│   ├── nginx/
-│   ├── php/
-│   └── mysql/
-├── docker-compose.yml             # Docker Compose configuration
-├── Dockerfile                     # Docker image definition
 └── README.md                      # This file
 ```
