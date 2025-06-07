@@ -1,0 +1,53 @@
+{
+    "register": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/register",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        "body": {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "password": "password123",
+            "password_confirmation": "password123"
+        }
+    },
+    "login": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/login",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        "body": {
+            "email": "john@example.com",
+            "password": "password123"
+        }
+    },
+    "create_workout": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/workouts",
+        "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer YOUR_TOKEN_HERE"
+        },
+        "body": {
+            "title": "Power Training",
+            "description": "Intensive leg day workout",
+            "trainer": "John Doe",
+            "date": "2025-06-07T18:00:00",
+            "slots": 10,
+            "is_active": true
+        }
+    },
+    "get_workouts": {
+        "method": "GET",
+        "url": "http://localhost:8000/api/workouts",
+        "headers": {
+            "Accept": "application/json",
+            "Authorization": "Bearer YOUR_TOKEN_HERE"
+        }
+    }
+}
